@@ -43,7 +43,9 @@ const App = () => {
     setBooks(updatedBooks);
   };
 
-  const deleteBookById = (id) => {
+  const deleteBookById = async (id) => {
+    await axios.delete(`http://localhost:3001/books/${id}`);
+
     // Must create a new array for change in state (i.e. adding a new book object) to trigger a re-render
     const updatedBooks = books.filter((book) => {
       return book.id !== id;
