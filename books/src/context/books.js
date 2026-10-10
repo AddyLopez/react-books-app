@@ -50,7 +50,20 @@ const Provider = ({ children }) => {
     setBooks(updatedBooks);
   };
 
-  return <BooksContext.Provider value={{}}>{children}</BooksContext.Provider>;
+  // Not common practice in production environment. Simply labeled here for clarity in development
+  const valueToShare = {
+    books,
+    fetchBooks,
+    createBook,
+    editBookById,
+    deleteBookById,
+  };
+
+  return (
+    <BooksContext.Provider value={{ valueToShare }}>
+      {children}
+    </BooksContext.Provider>
+  );
 };
 
 export { Provider };
