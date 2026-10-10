@@ -16,7 +16,7 @@ For me to gain a more sophisticated understanding of different approaches (with 
 
 ## Project Preview
 
-![React Books App Preview]("./preview/books-app-preview");
+![React Books App Preview](./preview/books-app-preview.avif)
 
 ### Course Attribution
 
