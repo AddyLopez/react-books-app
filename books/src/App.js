@@ -1,17 +1,18 @@
 import { useState } from "react";
+import axios from "axios";
 import BookCreate from "./components/BookCreate";
 import BookList from "./components/BookList";
 
 const App = () => {
   const [books, setBooks] = useState([]);
 
-  const createBook = (title) => {
+  const createBook = async (title) => {
+    const response = await axios.post("http://localhost:3001/books", {
+      title,
+    });
     // Must create a new array for change in state (i.e. adding a new book object) to trigger a re-render
-    // Ramdomized id could create duplicate ids, but it's not likely for the short book lists expected in this app
-    const updatedBooks = [
-      ...books,
-      { id: Math.round(Math.random() * 9999), title },
-    ];
+    // API will create an id automatically
+    const updatedBooks = [...books, response.data];
     setBooks(updatedBooks);
   };
 
