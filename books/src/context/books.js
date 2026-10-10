@@ -60,7 +60,7 @@ const Provider = ({ children }) => {
   };
 
   return (
-    <BooksContext.Provider value={{ valueToShare }}>
+    <BooksContext.Provider value={valueToShare}>
       {children}
     </BooksContext.Provider>
   );
