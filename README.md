@@ -20,4 +20,4 @@ For me to gain a more sophisticated understanding of different approaches (with 
 
 ### Course Attribution
 
-This learning project was instructed by Stephen Grider in his course [Modern React and Redux](https://www.udemy.com/course/react-redux/?couponCode=KEEPLEARNING).
+This learning project was instructed by Stephen Grider in his course [Modern React with Redux](https://www.udemy.com/course/react-redux/?couponCode=KEEPLEARNING).
