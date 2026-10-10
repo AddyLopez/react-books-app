@@ -12,7 +12,11 @@ const BookShow = ({ book, onDelete }) => {
     onDelete(book.id);
   };
 
-  let content = showEdit ? <BookEdit /> : <h3>{book.title}</h3>;
+  let content = showEdit ? (
+    <BookEdit bookTitle={book.title} />
+  ) : (
+    <h3>{book.title}</h3>
+  );
 
   return (
     <div className="book-show">
