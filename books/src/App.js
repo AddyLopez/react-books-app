@@ -15,6 +15,18 @@ const App = () => {
     setBooks(updatedBooks);
   };
 
+  const editBookById = (id, newTitle) => {
+    const updatedBooks = books.map((book) => {
+      if (book.id === id) {
+        return { ...book, title: newTitle };
+      }
+
+      return book;
+    });
+
+    setBooks(updatedBooks);
+  };
+
   const deleteBookById = (id) => {
     // Must create a new array for change in state (i.e. adding a new book object) to trigger a re-render
     const updatedBooks = books.filter((book) => {
@@ -26,7 +38,7 @@ const App = () => {
 
   return (
     <main className="app">
-      <BookList books={books} onDelete={deleteBookById} />
+      <BookList books={books} onDelete={deleteBookById} onEdit={editBookById} />
       <BookCreate onCreate={createBook} />
     </main>
   );
