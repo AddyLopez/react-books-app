@@ -15,9 +15,19 @@ const App = () => {
     setBooks(updatedBooks);
   };
 
+  const deleteBookById = (id) => {
+    console.log("Delete book with id of ", id);
+    // Must create a new array for change in state (i.e. adding a new book object) to trigger a re-render
+    const updatedBooks = books.filter((book) => {
+      return book.id !== id;
+    });
+
+    setBooks(updatedBooks);
+  };
+
   return (
     <main className="app">
-      <BookList books={books} />
+      <BookList books={books} onDelete={deleteBookById} />
       <BookCreate onCreate={createBook} />
     </main>
   );
