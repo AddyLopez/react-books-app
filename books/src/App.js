@@ -26,10 +26,15 @@ const App = () => {
     setBooks(updatedBooks);
   };
 
-  const editBookById = (id, newTitle) => {
+  const editBookById = async (id, newTitle) => {
+    const response = await axios.put(`http://localhost:3001/books/${id}`, {
+      title: newTitle,
+    });
+
+    // The response is used to update books to the latest version
     const updatedBooks = books.map((book) => {
       if (book.id === id) {
-        return { ...book, title: newTitle };
+        return { ...book, ...response.data };
       }
 
       return book;
